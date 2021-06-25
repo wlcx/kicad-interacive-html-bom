@@ -2,4 +2,4 @@ name: 'Kicad Interactive BOM Generator'
 description: 'Generate an interactive BOM html file from a kicad pcb using the InteractiveHTMLBOM plugin.'
 runs:
     using: 'docker'
-    image: 'Dockerfile'
+    image: 'docker://ghcr.io/wlcx/kicad-interactive-html-bom:main'
