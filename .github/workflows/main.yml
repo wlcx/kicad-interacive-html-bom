@@ -1,18 +1,14 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Build and push
 
-# Controls when the workflow will run
 on:
   push:
     branches: [ main ]
 
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: kicad-interactive-html-bom
   
 jobs:
   build:
