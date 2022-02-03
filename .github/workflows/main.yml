@@ -8,7 +8,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: kicad-interactive-html-bom
+  IMAGE_NAME: ${{ github.repository_owner }}/kicad-interactive-html-bom
   
 jobs:
   build:
