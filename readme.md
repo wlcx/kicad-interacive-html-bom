@@ -19,6 +19,14 @@ jobs:
           path: gen/*.html
 ```
 
+## Testing locally
+You can test the workflow locally by building the container and running it with a
+mounted directory:
+
+- (In local clone) `docker build -t kicadibom .`
+- `cd` to your kicad project's directory
+- `docker run --rm -it -v ``pwd``:/opt/project ihtmlbom`
+
 ## Tweaks
 We inject some [custom js][ibomcustom] into the HTML to add a git hash and generation timestamp to the header of the page. Convenient eh?
 
