@@ -193,7 +193,15 @@ func main() {
 	if len(flag.Args()) == 0 {
 		log.Fatal("No files included. Specify file to include at the end of the command invocation")
 	}
+
+	var includes []string
 	for _, include := range flag.Args() {
+		expanded, err := filepath.Glob(include)
+		bail(err)
+		includes = append(includes, expanded...)
+	}
+	for _, include := range includes {
+		log.Infof("Including file %s", include)
 		html, shouldCopy, err := processFile(include)
 		if shouldCopy {
 			bail(copyFile(include, filepath.Join(*out, filepath.Base(include))))

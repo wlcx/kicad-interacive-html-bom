@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 generate() {
     mkdir gen
@@ -14,4 +15,4 @@ for f in *.kicad_sch; do
 done
 
 mkdir out
-/opt/kicadsitegenerator -projectName $GITHUB_REPOSITORY -projectVersion "${GITHUB_SHA:0:8}" -out out *.md gen/*.pdf gen/*.html
+/opt/kicadsitegenerator -projectName "${GITHUB_REPOSITORY-someproject}" -projectVersion "${GITHUB_SHA:0:8-unknown}" -out out *.md gen/*.pdf gen/*.html
