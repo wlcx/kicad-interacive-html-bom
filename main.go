@@ -144,7 +144,7 @@ func (s *site) Render(outpath string) error {
 			Content: page.Content,
 			ProjectVersion: s.projectVersion,
 			GeneratedAt: time.Now().Format(time.RFC3339),
-			SelfVersion: version,
+			SelfVersion: version[:8],
 		}
 
 		f, err := os.Create(filepath.Join(outpath, page.UrlPath))

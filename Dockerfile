@@ -1,6 +1,6 @@
 FROM nixos/nix
 WORKDIR /tmp
-COPY main.go go.mod go.sum flake.nix flake.lock main.html.tmpl .
+COPY . .
 RUN nix build --extra-experimental-features "nix-command flakes" --show-trace
 
 FROM ubuntu:jammy
